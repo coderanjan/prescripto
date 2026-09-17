@@ -1,111 +1,300 @@
 # 🏥 Prescripto
 
-**Prescripto** is a doctor appointment booking platform that connects patients with doctors for easy scheduling, and gives admins tools to manage doctors, appointments, and platform data.
+Prescripto is a full-stack doctor appointment booking platform built with the MERN stack. Patients can discover doctors, book appointments, make online payments, and manage their profiles, while doctors and admins can manage appointments and platform data.
 
-## 🔗 Live Links
+## 🔗 Live Demo
 
-| App | Link |
-|---|---|
-| 🌐 Patient Frontend | [prescripto-frontend-kok2.onrender.com](https://prescripto-frontend-kok2.onrender.com/) |
-| 🛠️ Admin Panel | [prescripto-admin-tkj9.onrender.com](https://prescripto-admin-tkj9.onrender.com/) |
-| 💻 Source Code | [github.com/coderanjan/prescripto](https://github.com/coderanjan/prescripto) |
+| Application         | Link                                                           |
+| ------------------- | -------------------------------------------------------------- |
+| 🌐 Patient Frontend | [Prescripto](https://prescripto-frontend-kok2.onrender.com/)   |
+| 🛠️ Admin Panel     | [Admin Dashboard](https://prescripto-admin-tkj9.onrender.com/) |
+| 💻 Source Code      | [GitHub Repository](https://github.com/coderanjan/prescripto)  |
 
-> ⚠️ Since this app is hosted on Render's free tier, the first request after a period of inactivity may take **30–60 seconds** to load while the server spins back up.
+> ⚠️ The application is deployed on Render's free tier. After a period of inactivity, the first request may take some time while the service starts.
 
 ## ✨ Features
 
-- 👤 Patient registration and login
-- 🩺 Browse doctors by specialty
-- 📅 Book, reschedule, and cancel appointments
-- 💳 Online payment for appointments
-- 🖼️ Profile management with image upload
-- 🔐 JWT-based authentication for patients, doctors, and admins
-- 🛠️ Admin dashboard to add/manage doctors and view all appointments
-- 📱 Fully responsive UI
+### 👤 Patient
+
+* Register and log in
+* Browse doctors by specialty
+* View doctor profiles and availability
+* Book appointments
+* Cancel appointments
+* Make online payments
+* View appointment history
+* Update profile information
+* Upload profile images
+
+### 🩺 Doctor
+
+* Secure doctor authentication
+* View appointments
+* Manage appointment status
+* View earnings and dashboard statistics
+* Update doctor profile
+* Manage availability
+
+### 🛠️ Admin
+
+* Secure admin authentication
+* Add and manage doctors
+* View registered doctors
+* View and manage appointments
+* View platform statistics
+* Manage doctor availability
+
+### 🔐 Security & Backend
+
+* JWT-based authentication
+* Role-based access control
+* Password hashing
+* Protected API routes
+* MongoDB data persistence
+* Cloudinary image storage
+* Razorpay payment integration
 
 ## 🧰 Tech Stack
 
-**Frontend & Admin Panel**
-- React (Vite)
-- React Router
-- Tailwind CSS / CSS
-- Axios
-- Context API for state management
+### Frontend
 
-**Backend** 
-- Node.js & Express.js
-- MongoDB with Mongoose
-- JSON Web Tokens (JWT) for authentication
-- Multer / Cloudinary for image uploads
-- Razorpay for payments
+* React
+* Vite
+* React Router
+* Tailwind CSS
+* Axios
+* Context API
+* React Toastify
 
-**Deployment**
-- Render (Frontend, Admin & Backend)
+### Backend
 
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* bcrypt
+* Multer
+* Cloudinary
+* Razorpay
+
+### Deployment
+
+* Render
+
+## 🏗️ Project Structure
+
+```text
+prescripto/
+│
+├── frontend/          # Patient-facing React application
+│
+├── admin/             # Admin/doctor dashboard
+│
+└── backend/           # Express.js REST API
+    ├── config/
+    ├── controllers/
+    ├── middleware/
+    ├── models/
+    ├── routes/
+    └── server.js
+```
+
+## 🔄 Application Flow
+
+```text
+Patient
+   │
+   ▼
+React Frontend
+   │
+   ▼
+Express REST API
+   │
+   ├── Authentication / Authorization
+   ├── Appointment Management
+   ├── Payment Processing
+   └── Image Upload
+   │
+   ├── MongoDB
+   ├── Cloudinary
+   └── Razorpay
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or later)
-- npm or yarn
-- A running instance of the Prescripto backend API (and its `MONGODB_URI`, if you're running the full stack locally)
+Make sure you have the following installed:
 
-### Installation
+* Node.js 18+
+* npm
+* MongoDB / MongoDB Atlas account
+* Cloudinary account
+* Razorpay account
 
-1. **Clone the repository**
+### 1. Clone the repository
 
-   ```bash
-   git clone https://github.com/coderanjan/prescripto.git
-   cd prescripto
-   ```
+```bash
+git clone https://github.com/coderanjan/prescripto.git
 
-2. **Install dependencies**
+cd prescripto
+```
 
-   ```bash
-   npm install
-   ```
+### 2. Backend Setup
 
-3. **Configure environment variables**
+```bash
+cd backend
+npm install
+```
 
-   Create a `.env` file in the project root:
+Create a `.env` file inside the `backend` directory:
 
-   ```env
-   VITE_BACKEND_URL=http://localhost:4000
-   ```
+```env
+PORT=4000
+MONGODB_URL=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 
-4. **Run the development server**
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_SECRET_KEY=your_cloudinary_secret_key
 
-   ```bash
-   npm run dev
-   ```
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
-   The app will be available at `http://localhost:5173`.
+ADMIN_EMAIL=your_admin_email
+ADMIN_PASSWORD=your_admin_password
+```
 
-5. **Build for production**
+Start the backend:
 
-   ```bash
-   npm run build
-   ```
+```bash
+npm run server
+```
 
-## 🖥️ Admin Panel
+### 3. Frontend Setup
 
-The admin panel is a separate application used to manage doctors and appointments. It is deployed at [prescripto-admin-tkj9.onrender.com](https://prescripto-admin-tkj9.onrender.com/). Refer to its own setup instructions if it lives in a separate repository/folder.
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+```
+
+Create a `.env` file:
+
+```env
+VITE_BACKEND_URL=http://localhost:4000
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
+
+The frontend will normally run at:
+
+```text
+http://localhost:5173
+```
+
+### 4. Admin Panel Setup
+
+```bash
+cd admin
+npm install
+```
+
+Create the required environment file:
+
+```env
+VITE_BACKEND_URL=http://localhost:4000
+```
+
+Start the admin application:
+
+```bash
+npm run dev
+```
+
+## 💳 Payment
+
+Prescripto uses Razorpay for online appointment payments.
+
+For development, use Razorpay test mode and test credentials. Never commit production API keys or secrets to GitHub.
+
+## 🖼️ Image Upload
+
+User and doctor profile images are uploaded through the backend using Multer and stored on Cloudinary.
+
+```text
+Client
+  ↓
+Multer
+  ↓
+Backend
+  ↓
+Cloudinary
+  ↓
+Image URL
+  ↓
+MongoDB
+```
+
+MongoDB stores the image URL rather than the actual image file.
+
+## 📸 Screenshots
+
+### Patient Application
+
+*Add screenshots here.*
+
+### Doctor Dashboard
+
+*Add screenshots here.*
+
+### Admin Dashboard
+
+*Add screenshots here.*
+
+## 🌐 Deployment
+
+The application is deployed using Render.
+
+The frontend, admin panel, and backend are deployed as separate services.
 
 ## 🤝 Contributing
 
-Contributions are welcome!
+Contributions are welcome.
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
+2. Create a feature branch
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add some feature"
+```
+
+4. Push the branch
+
+```bash
+git push origin feature/your-feature
+```
+
 5. Open a Pull Request
 
 ## 📄 License
 
-This project is available under the [MIT License](LICENSE).
+This project is available under the [MIT License](https://github.com/coderanjan/prescripto/blob/main/LICENSE).
 
 ## 📬 Contact
 
-Maintained by [@coderanjan](https://github.com/coderanjan). For questions or issues, please open an [issue](https://github.com/coderanjan/prescripto/issues) on GitHub.
+Maintained by [@coderanjan](https://github.com/coderanjan).
+
+For questions, bug reports, or suggestions, please open an issue in the repository.
