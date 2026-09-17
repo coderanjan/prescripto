@@ -248,15 +248,30 @@ MongoDB stores the image URL rather than the actual image file.
 
 ### Patient Application
 
-*Add screenshots here.*
+<img width="957" height="470" alt="image" src="https://github.com/user-attachments/assets/fbafc94e-1ba0-4822-b56b-03d2e34e7ee1" />
+<img width="955" height="468" alt="image" src="https://github.com/user-attachments/assets/765fdd20-011a-4dfb-b9b5-6d09213dde04" />
+<img width="937" height="305" alt="image" src="https://github.com/user-attachments/assets/ece4d56c-294d-4a87-b7dc-5c5f02c519f6" />
+
+
 
 ### Doctor Dashboard
 
-*Add screenshots here.*
+<img width="956" height="461" alt="image" src="https://github.com/user-attachments/assets/61e3553e-1c41-471e-a68b-50e881305ab6" />
+<img width="955" height="464" alt="image" src="https://github.com/user-attachments/assets/05c7c703-89fc-4cc7-b5b0-6596a3d15fcd" />
+<img width="944" height="461" alt="image" src="https://github.com/user-attachments/assets/6c69319e-af16-468b-bc23-5a16e8268dd8" />
+
+
 
 ### Admin Dashboard
 
-*Add screenshots here.*
+<img width="958" height="473" alt="image" src="https://github.com/user-attachments/assets/025f5d36-16bf-4605-98d9-7fbef10a6a1f" />
+<img width="959" height="458" alt="image" src="https://github.com/user-attachments/assets/3f43cd82-9b29-4a01-bd70-bfa139ec8e69" />
+<img width="953" height="365" alt="image" src="https://github.com/user-attachments/assets/edc5b875-f355-4dc2-9e92-b3b5e1876cc2" />
+<img width="947" height="443" alt="image" src="https://github.com/user-attachments/assets/df114e10-4084-4044-bac0-2c39d1506c82" />
+
+
+
+
 
 ## 🌐 Deployment
 
